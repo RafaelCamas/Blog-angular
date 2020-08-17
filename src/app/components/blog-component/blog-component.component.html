@@ -1,0 +1,19 @@
+<h2>Posts receintes</h2>
+<hr>
+<section class="container">
+  <div class="row" *ngIf="this.arrPosts.length !== 0">
+    <div class="col-12 col-md-6 col-lg-3 mb-2" *ngFor="let post of arrPosts">
+      <div class="card">
+        <img [src]="post.imagen" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{post.titulo}}</h5>
+          <h6 class="card-title">{{post.autor}}</h6>
+          <p class="card-text">{{post.texto}}</p>
+          <p class="card-text">{{post.fecha}}</p>
+          <p class="card-text">{{post.usuario}}</p>
+          <a [routerLink]="['/blog/:blogId', post.id]" class="btn btn-primary">Ver post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

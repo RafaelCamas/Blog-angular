@@ -1,0 +1,39 @@
+<div class="container mt-4 mb-4">
+  <form>
+    <div class="form-group">
+      <label>Nombre de la canción</label>
+      <input type="text" class="form-control" placeholder="Wey, ¿Como se llama esa rola?" name="nombrecancion" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Autor de la canción</label>
+      <input type="text" class="form-control" placeholder="¿Quién es el/la artista?" name="autor" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Cuéntanos más</label>
+      <input type="text" class="form-control" placeholder="Dinos el álbum, una actuación destacable etc..." name="album"
+        ngModel>
+    </div>
+    <div class="form-group">
+      <label>Introduce una imagen</label>
+      <input type="text" class="form-control-file" placeholder="¡Con una URL basta!" name="imagen" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Fecha</label>
+      <input type="text" class="form-control" placeholder="¡Dinos el año!(Mes y día si te mola la exactitud :)"
+        name="fecha" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Categoría</label>
+      <select class="form-container" name="Categorías" ngModel>
+        <option value="">Selecciona una categoría</option>
+        <option *ngFor="let categoria of arrCategorias" [value]="categoria.nombre">
+          {{categoria.nombre.toUpperCase() }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Usuario</label>
+      <input type="text" class="form-control-file" placeholder="¡Identifícate forastero!" name="imagen" ngModel>
+    </div>
+    <input type="submit" value="Añadir post" class="btn-block btn-success">
+  </form>
+</div>
