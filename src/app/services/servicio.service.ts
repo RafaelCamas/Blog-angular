@@ -76,6 +76,9 @@ export class ServicioService {
     this.arrPost.push(pPost);
     this.idActual++;
   }
+  getAllcategorias(): Categoria[] {
+    return this.arrCategorias;
+  }
   getAllPost(): Post[] {
     return this.arrPost;
   }
@@ -85,7 +88,7 @@ export class ServicioService {
     );
     return arrPostCategoria;
   }
-  getPosrById(pId): Post[] {
+  getPostById(pId): Post[] {
     const arrPostId = this.arrPost.filter((post) => post.id === pId);
     return arrPostId;
   }

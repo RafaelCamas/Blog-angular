@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from 'src/app/services/servicio.service';
+import { Categoria } from '../../models/categoria';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-component',
@@ -6,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario-component.component.css'],
 })
 export class FormularioComponentComponent implements OnInit {
-  constructor() {}
+  arrCategorias: Categoria[];
+  constructor(
+    private servicioService: ServicioService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.arrCategorias = this.servicioService.getAllcategorias();
+  }
+  agregarPost(pPost): void {
+    pPost.id = this.idActual;
+    this.arrPost.push(pPost);
+    this.idActual++;
+  }
 }

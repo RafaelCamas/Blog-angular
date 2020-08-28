@@ -1,1 +1,12 @@
-<p>vistapost works!</p>
+<div class="container">
+  <div>
+    <img [src]="post.imagen">
+  </div>
+  <h4>{{post.titulo}} {{post.autor}}</h4>
+  <ul>
+    <li>Info{{post.texto}}</li>
+    <li>Fecha{{post.fecha}}</li>
+    <li>Categoría{{post.categoria}}</li>
+    <li>Usuario{{post.usuario}}</li>
+  </ul>
+</div>
